@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>康佑 & 奈純 | 結婚式のご案内</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2c2418;--ink-soft:#5a4e3c;--cream:#faf6f0;--gold:#b8963e;--gold-light:#d4b96a;--gold-pale:rgba(184,150,62,.10);--indigo:#2d3a4e;--washi:#f5efe5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Noto Serif JP',serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.fade{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.23,1,.32,1),transform .85s cubic-bezier(.23,1,.32,1)}.fade.visible{opacity:1;transform:translateY(0)}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,8,.25) 0%,rgba(15,12,8,.08) 40%,rgba(15,12,8,.35) 100%);z-index:0}
+.mon{width:80px;height:80px;border:1.5px solid rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:pulse 3s ease-in-out infinite;position:relative;z-index:1}
+.mon span{font-size:30px;color:rgba(255,255,255,.95);font-weight:600}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.15)}50%{box-shadow:0 0 0 18px rgba(255,255,255,0)}}
+.scroll-hint{position:absolute;bottom:28px;display:flex;flex-direction:column;align-items:center;gap:8px;animation:sf 2s ease-in-out infinite;z-index:1}
+.scroll-hint span{font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.7);font-family:'Cormorant Garamond',serif}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent)}
+@keyframes sf{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.sec{padding:80px 20px;position:relative}.sec-a{background:var(--washi)}@media(max-width:640px){.sec{padding:60px 16px}}
+.stitle-en{font-family:'Cormorant Garamond',serif;font-size:clamp(11px,2vw,13px);font-weight:400;letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;text-align:center}
+.stitle-jp{font-size:clamp(20px,4vw,26px);font-weight:500;letter-spacing:.2em;color:var(--ink);text-align:center;margin-bottom:40px}
+.intro-names{display:flex;align-items:center;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.intro-name{font-size:clamp(30px,7vw,52px);font-weight:600;letter-spacing:.15em}
+.intro-amp{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,4vw,32px);font-weight:300;font-style:italic;color:var(--gold)}
+.tl{position:relative;max-width:400px;margin:0 auto;padding-left:28px}
+.tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--gold-light),var(--gold-pale))}
+.tl-item{position:relative;padding:0 0 28px 20px}.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--gold);background:var(--cream)}
+.tl-time{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.15em;color:var(--gold);margin-bottom:2px}
+.tl-label{font-size:15px;color:var(--ink);letter-spacing:.08em}
+.venue-card{max-width:640px;margin:32px auto 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,24,.06);border:1px solid rgba(184,150,62,.12)}
+.venue-map{width:100%;height:260px}.venue-map iframe{width:100%;height:100%;border:none}
+.venue-body{padding:28px}
+.venue-name{font-size:20px;font-weight:600;letter-spacing:.15em;margin-bottom:2px}
+.venue-en{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:16px}
+.venue-row{display:flex;gap:10px;margin-bottom:10px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+.venue-lbl{flex-shrink:0;width:44px;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--gold);padding-top:1px}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 24px;background:var(--indigo);color:#fff;border:none;border-radius:4px;font-family:'Shippori Mincho',serif;font-size:12px;letter-spacing:.1em;cursor:pointer;transition:all .3s;text-decoration:none}.btn:hover{background:#3d4f68;transform:translateY(-1px)}
+.prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:680px;margin:0 auto}@media(max-width:600px){.prof-grid{grid-template-columns:1fr;max-width:340px}}
+.prof-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 20px rgba(44,36,24,.05);border:1px solid rgba(184,150,62,.1)}
+.prof-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.prof-body{padding:24px}.prof-name{font-size:22px;font-weight:600;letter-spacing:.15em;margin-bottom:16px}
+.prof-row{display:flex;gap:10px;margin-bottom:8px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+.prof-lbl{flex-shrink:0;width:56px;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--gold);padding-top:1px}
+.prof-msg{margin-top:16px;padding-top:16px;border-top:1px solid rgba(184,150,62,.1);font-size:13px;line-height:2;color:var(--ink-soft)}
+.accordion{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 20px rgba(44,36,24,.05);border:1px solid rgba(184,150,62,.1);transition:border .3s}
+.accordion.open{border-color:var(--gold)}
+.accordion-header{display:flex;align-items:center;gap:12px;padding:20px 24px;cursor:pointer;user-select:none}
+.accordion-arrow{font-size:20px;color:var(--gold);transition:transform .3s;flex-shrink:0}.accordion.open .accordion-arrow{transform:rotate(180deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.23,1,.32,1)}.accordion.open .accordion-body{max-height:1000px}
+.accordion-inner{padding:0 24px 24px}.accordion-inner img{width:100%;border-radius:8px;margin-bottom:16px;display:block}
+.ht-placeholder{width:100%;aspect-ratio:16/9;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.1em;opacity:.7}
+.ht-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold);line-height:1}
+.ht-label{font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--ink)}
+.flip-card{perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;min-height:200px;transition:transform .7s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{backface-visibility:hidden;border-radius:12px;overflow:hidden;position:absolute;top:0;left:0;width:100%;min-height:200px}
+.flip-front{background:#fff;border:1px solid rgba(184,150,62,.12);box-shadow:0 4px 20px rgba(44,36,24,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px 28px}
+.flip-back{background:var(--washi);border:1px solid rgba(184,150,62,.18);box-shadow:0 4px 20px rgba(44,36,24,.08);transform:rotateY(180deg);padding:28px 24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.qa-avatar{flex-shrink:0;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.qa-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
+.gallery-link{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--indigo);color:#fff;border-radius:6px;font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.15em;text-decoration:none;box-shadow:0 4px 20px rgba(45,58,78,.2);transition:all .3s}.gallery-link:hover{background:#3d4f68;transform:translateY(-2px)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:560px;margin:0 auto 24px}
+.gallery-thumb{aspect-ratio:1/1;border-radius:6px;overflow:hidden;background:#ddd}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.closing{padding:80px 24px;background:linear-gradient(175deg,#ebe3d3,#e6dcc8);text-align:center}
+.closing-text{font-size:15px;line-height:2.6;color:var(--ink-soft);white-space:pre-line;letter-spacing:.08em;max-width:480px;margin:0 auto}
+.footer{padding:40px 24px;text-align:center;background:var(--indigo);color:rgba(255,255,255,.6)}
+.footer-names{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.3em;color:rgba(255,255,255,.85);margin-bottom:6px}
+.divider{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 0}
+.divider-line{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
+.divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.side-nav{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:13px;align-items:flex-end}
+.side-nav a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#bbb;transition:color .3s}
+.side-nav a.active{color:var(--gold)}
+.side-nav .nav-label{font-size:9px;letter-spacing:.1em;font-family:'Cormorant Garamond',serif;opacity:0;transition:opacity .3s;white-space:nowrap}
+.side-nav a.active .nav-label{opacity:1}
+.side-nav .nav-dot{width:5px;height:5px;border-radius:50%;border:1.5px solid #ccc;transition:all .3s}
+.side-nav a.active .nav-dot{width:9px;height:9px;border-color:var(--gold);background:var(--gold)}
+</style>
+</head>
+<body>
+
+<script>
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  📝 画像URL設定 — ここのURLを変更するだけで画像が差し替わります     ║
+   ║  画像ファイルを images/ フォルダに置いて、ファイル名を合わせてください  ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+const IMAGES = {
+  // ── FV（トップ）──
+  hero: "images/hero.jpg",
+
+  // ── プロフィール写真 ──
+  groom: "images/groom.jpg",
+  bride: "images/bride.jpg",
+
+  // ── ふるさと紹介：岡山 ──
+  okayamaHeader: "",           // ← 岡山のヘッダー風景写真（例："images/okayama-header.jpg"）
+  okayama01: "images/okayama-01.jpg",
+  okayama02: "images/okayama-02.jpg",
+  okayama03: "images/okayama-03.jpg",
+
+  // ── ふるさと紹介：静岡 ──
+  shizuokaHeader: "",          // ← 静岡のヘッダー風景写真（例："images/shizuoka-header.jpg"）
+  shizuoka01: "",              // ← 静岡01の写真（例："images/shizuoka-01.jpg"）
+  shizuoka02: "",              // ← 静岡02の写真
+  shizuoka03: "",              // ← 静岡03の写真
+
+  // ── 八坂神社 ──
+  shrineMain: "images/shrine-main.jpg",
+  shrine01: "images/shrine-01.jpg",
+  shrine02: "images/shrine-02.jpg",
+  shrine03: "images/shrine-03.jpg",
+
+  // ── 二人の写真ギャラリー（サムネイル4枚）──
+  gallery01: "",               // ← 例："images/gallery-01.jpg"
+  gallery02: "",
+  gallery03: "",
+  gallery04: "",
+
+  // ── ここちゃんギャラリー（サムネイル4枚）──
+  coco01: "",                  // ← 例："images/coco-01.jpg"
+  coco02: "",
+  coco03: "",
+  coco04: "",
+};
+
+/* 画像をページに反映する関数（編集不要） */
+function setImg(id, src) {
+  const el = document.getElementById(id);
+  if (!el || !src) return;
+  if (el.tagName === 'IMG') { el.src = src; el.style.display = 'block'; }
+  else { el.innerHTML = '<img src="' + src + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">'; }
+}
+</script>
+
+<!-- Side Nav -->
+<nav class="side-nav" id="sideNav"></nav>
+
+<!-- 1. HERO -->
+<section class="hero" id="top">
+  <img id="imgHero" src="" alt="" class="hero-img" style="display:none">
+  <div class="hero-overlay"></div>
+  <div style="position:relative;z-index:1"><div style="display:flex;justify-content:center"><div class="mon"><span>寿</span></div></div></div>
+  <div class="scroll-hint"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- INTRO -->
+<section class="sec" style="padding-top:60px;padding-bottom:60px;background:linear-gradient(180deg,var(--washi),var(--cream));text-align:center">
+  <div class="fade"><div class="intro-names"><span class="intro-name">康佑</span><span class="intro-amp">&amp;</span><span class="intro-name">奈純</span></div></div>
+  <div class="fade" data-delay="0.08"><div style="font-size:clamp(15px,3vw,18px);font-weight:500;letter-spacing:.18em;margin-bottom:6px">2026年5月30日（土）</div></div>
+  <div class="fade" data-delay="0.14"><div style="margin-top:20px"><div style="display:inline-block;padding:10px 32px;border:1px solid var(--gold);border-radius:2px"><span style="font-size:clamp(13px,2.5vw,15px);letter-spacing:.3em;color:var(--gold);font-weight:500">結婚式のご案内</span></div></div></div>
+  <div class="fade" data-delay="0.2"><div style="margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:clamp(11px,2vw,13px);letter-spacing:.35em;color:var(--gold);text-transform:uppercase">Saturday, May 30th, 2026</div></div>
+</section>
+
+<!-- 2. GREETING -->
+<section class="sec sec-a" id="greeting">
+  <div class="fade"><div class="stitle-en">Greeting</div><div class="stitle-jp">ごあいさつ</div></div>
+  <div class="fade" data-delay="0.12">
+    <p style="font-size:14px;line-height:2.4;color:var(--ink-soft);max-width:520px;margin:0 auto;white-space:pre-line;letter-spacing:.08em;text-align:center">謹啓　薫風の候
+皆様におかれましては
+ますますご清祥のこととお慶び申し上げます
+
+この度 私たちは結婚式を挙げることとなりました
+つきましては 日頃お世話になっております
+皆様にお集まりいただき
+ささやかな披露宴を催したく存じます
+
+ご多用中 誠に恐縮ではございますが
+ぜひご出席賜りますようお願い申し上げます
+
+敬白</p>
+  </div>
+</section>
+
+<!-- 3. SCHEDULE & VENUE -->
+<section class="sec" id="schedule">
+  <div class="fade"><div class="stitle-en">Schedule &amp; Venue</div><div class="stitle-jp">当日のご案内</div></div>
+  <div class="fade" data-delay="0.1">
+    <div class="tl">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">13:30</div><div class="tl-label">受付開始</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">14:00</div><div class="tl-label">挙式（八坂神社 本殿）</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">15:00</div><div class="tl-label">移動・集合写真撮影</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">15:30</div><div class="tl-label">披露宴開宴</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">18:00</div><div class="tl-label">お開き</div></div>
+    </div>
+  </div>
+  <div class="fade" data-delay="0.2">
+    <div class="venue-card">
+      <div class="venue-map"><iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE%20%E4%BA%AC%E9%83%BD&zoom=15" allowfullscreen loading="lazy" title="map"></iframe></div>
+      <div class="venue-body">
+        <div class="venue-name">八坂神社</div><div class="venue-en">Yasaka Shrine</div>
+        <div class="venue-row"><div class="venue-lbl">住所</div><div>〒605-0073 京都府京都市東山区祇園町北側625</div></div>
+        <div class="venue-row"><div class="venue-lbl">日時</div><div>2026年5月30日（土）<br>挙式 14:00 ／ 披露宴 15:30</div></div>
+        <div class="venue-row"><div class="venue-lbl">交通</div><div>京阪電車「祇園四条駅」より徒歩5分<br>阪急電車「京都河原町駅」より徒歩8分<br>JR京都駅よりタクシー約15分</div></div>
+        <div style="margin-top:12px;font-size:12px;color:var(--gold);letter-spacing:.06em">※ お車でお越しの場合は、近隣のコインパーキングをご利用ください。</div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(184,150,62,.12)">
+          <div style="font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--ink);margin-bottom:12px">ご来場にあたってのお願い</div>
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px">
+            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>八坂神社にはロッカーがございますが、小さいものが中心のため、キャリーバッグなどの大きなお荷物はお預けいただくことができません。お手数をおかけいたしますが、大きなお荷物は事前に宿泊先などへお預けのうえお越しください。</li>
+            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>当日は更衣室のご用意がございませんため、お着替えをお済ませのうえお越しいただけますと幸いです。</li>
+            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>お車代は当日お渡しさせていただきます。</li>
+          </ul>
+        </div>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">Google Maps で開く →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROFILE -->
+<section class="sec sec-a" id="profile">
+  <div class="fade"><div class="stitle-en">Profile</div><div class="stitle-jp">二人のプロフィール</div></div>
+  <div class="fade" data-delay="0.1">
+    <div class="prof-grid">
+      <div class="prof-card">
+        <img id="imgGroom" src="" alt="康佑" class="prof-img" style="display:none">
+        <div id="phGroom" style="width:100%;aspect-ratio:1/1;background:#8b7a5e;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">新郎の写真</div>
+        <div class="prof-body"><div class="prof-name">康佑</div>
+          <div class="prof-row"><div class="prof-lbl">出身</div><div>岡山県</div></div>
+          <div class="prof-row"><div class="prof-lbl">趣味</div><div>ビールを飲みながらゆっくり過ごすこと</div></div>
+          <div class="prof-row"><div class="prof-lbl">仕事</div><div>WEBマーケティング関連<br>株式会社TrustLink 代表取締役</div></div>
+          <div class="prof-row"><div class="prof-lbl">性格</div><div>ポジティブで楽観的でいつも何とかなる精神</div></div>
+          <div class="prof-msg">当日はしっかりと楽しんでもらいたいです！<br>よろしくお願いいたします！</div>
+        </div>
+      </div>
+      <div class="prof-card">
+        <img id="imgBride" src="" alt="奈純" class="prof-img" style="display:none">
+        <div id="phBride" style="width:100%;aspect-ratio:1/1;background:#7a8b9e;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">新婦の写真</div>
+        <div class="prof-body"><div class="prof-name">奈純</div>
+          <div class="prof-row"><div class="prof-lbl">出身</div><div>静岡県</div></div>
+          <div class="prof-row"><div class="prof-lbl">趣味</div><div>ピクニック、料理</div></div>
+          <div class="prof-row"><div class="prof-lbl">仕事</div><div>パッションで生きてる会社員</div></div>
+          <div class="prof-row"><div class="prof-lbl">性格</div><div>単純さと純粋さと真面目のミックス</div></div>
+          <div class="prof-msg">大切な方々に囲まれてこの日を迎えられることがとても嬉しいです。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. HOMETOWNS -->
+<section class="sec" id="hometown">
+  <div class="fade"><div class="stitle-en">Our Hometowns</div><div class="stitle-jp">岡山・静岡のふるさと紹介</div></div>
+  <!-- 岡山 -->
+  <div style="max-width:680px;margin:0 auto 56px">
+    <div class="fade" style="text-align:center;margin-bottom:28px"><div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">Kosuke's Hometown</div><div style="font-size:22px;font-weight:600;letter-spacing:.15em">晴れの国 岡山</div><div style="font-size:12px;color:var(--ink-soft);letter-spacing:.15em;margin-top:4px">康佑のふるさと</div></div>
+    <div class="fade" data-delay="0.08"><div id="phOkayamaH" style="border-radius:10px;overflow:hidden;margin-bottom:24px;box-shadow:0 3px 16px rgba(44,36,24,.06)"><div class="ht-placeholder" style="background:linear-gradient(135deg,#8fa87a44,#8fa87a22);color:#8fa87a">岡山の風景写真を追加</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk01"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">岡山県御津郡御津町という、山と川に囲まれた自然豊かな場所で育ちました。
+のんびりとした空気が流れる、落ち着いた地元です。</p></div></div></div></div>
+      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk02"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">「じゃけん」などの方言に、岡山らしい空気が残っています。
+桃太郎ゆかりの地として知られ、えびめしのような個性的なB級グルメも地元らしい魅力のひとつです。</p></div></div></div></div>
+      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk03"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">自然の近くで過ごしてきたこともあって、今でも落ち着いた時間や穏やかな空気に安心感を覚えます。
+地元で育った感覚が、今の自分の土台になっているように思います。</p></div></div></div></div>
+    </div>
+  </div>
+  <!-- 静岡 -->
+  <div style="max-width:680px;margin:0 auto">
+    <div class="fade" style="text-align:center;margin-bottom:28px"><div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">Nasumi's Hometown</div><div style="font-size:22px;font-weight:600;letter-spacing:.15em">富士のふもと 静岡</div><div style="font-size:12px;color:var(--ink-soft);letter-spacing:.15em;margin-top:4px">奈純のふるさと</div></div>
+    <div class="fade" data-delay="0.08"><div id="phShizuokaH" style="border-radius:10px;overflow:hidden;margin-bottom:24px;box-shadow:0 3px 16px rgba(44,36,24,.06)"><div class="ht-placeholder" style="background:linear-gradient(135deg,#7a9bb544,#7a9bb522);color:#7a9bb5">静岡の風景写真を追加</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz01"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz02"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz03"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SHRINE -->
+<section class="sec sec-a" id="shrine">
+  <div class="fade"><div class="stitle-en">Yasaka Shrine</div><div class="stitle-jp">八坂神社ってどんな場所？</div></div>
+  <div class="fade" data-delay="0.08"><div style="max-width:640px;margin:0 auto 32px;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,24,.08)"><img id="imgShrine" src="" alt="八坂神社" style="width:100%;display:none"><div id="phShrine" style="width:100%;aspect-ratio:1/1;background:#c4533a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">八坂神社の写真</div></div></div>
+  <div class="fade" data-delay="0.14"><p style="font-size:14px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;max-width:600px;margin:0 auto 40px;text-align:center">八坂神社は、京都の有名な神社というだけではなく、強い神様の物語や龍の伝説が今も語り継がれている、少し特別な場所です。
+今回私たちが挙式を行うのは、そんな祈りと物語が今も息づく神社。
+少しだけ背景を知っていただくと、当日の景色もいつもより印象深く感じてもらえるかもしれません。</p></div>
+  <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:16px">
+    <div class="fade" data-delay="0.18"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">01</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">強くて守ってくれる神様がいる場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS01" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の主祭神は、素戔嗚尊（すさのをのみこと）。日本神話では、あらゆる災厄の象徴ともいえる八岐大蛇（やまたのおろち）を退治したことで知られる、力強い神様です。
+八坂神社でも、災いを祓い、人々を守る神様として大切に祀られています。ただ歴史のある神社というだけでなく、『困難に立ち向かい、災いを退ける強い神様がいる場所』だと思うと、少し見え方が変わるかもしれません。</p></div></div></div></div>
+    <div class="fade" data-delay="0.24"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">02</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">京都のまんなかにある神話スポット</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS02" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の本殿の下には、青龍が棲む龍穴があると言われています。公式にも、本殿の下に大きな池があり、そこは青龍の住む龍穴であるという話が紹介されています。
+京都の中心部、たくさんの人が行き交う場所にありながら、そんな神話のような伝説が今も残っているのが八坂神社の面白さです。観光地として有名でありながら、どこか神秘的な空気を感じるのは、こうした背景があるからかもしれません。</p></div></div></div></div>
+    <div class="fade" data-delay="0.3"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">03</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">祈りと物語が、今も続いている場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS03" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社は、昔の物語が残っているだけの場所ではありません。古くから人々が災いを鎮め、無事を祈る場所として大切にしてきた神社であり、その流れは今も続いています。
+祇園祭も、もともとは疫病などの災厄を鎮める祈りと深く結びついた行事として受け継がれてきました。つまり八坂神社は、『昔の伝説が残る場所』であると同時に、『今も人の願いが集まる場所』でもあります。</p></div></div></div></div>
+  </div>
+</section>
+
+<!-- Q&A -->
+<section class="sec" id="qa">
+  <div class="fade"><div class="stitle-en">Q &amp; A</div><div class="stitle-jp">二人に聞いてみた</div></div>
+  <div class="fade" data-delay="0.08"><p style="font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:32px;letter-spacing:.06em">カードをタップすると、二人の回答が見られます</p></div>
+  <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:20px" id="qaCards"></div>
+</section>
+
+<!-- 7. GALLERY -->
+<section class="sec sec-a" id="gallery" style="text-align:center">
+  <div class="fade"><div class="stitle-en">Photo Gallery</div><div class="stitle-jp">二人の写真ギャラリー</div></div>
+  <div class="fade" data-delay="0.1"><p style="font-size:14px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">二人の思い出の写真をまとめました。<br>ぜひご覧ください。</p></div>
+  <div class="fade" data-delay="0.14"><div class="gallery-grid"><div class="gallery-thumb" id="phG01"></div><div class="gallery-thumb" id="phG02"></div><div class="gallery-thumb" id="phG03"></div><div class="gallery-thumb" id="phG04"></div></div></div>
+  <div class="fade" data-delay="0.2"><a class="gallery-link" href="./gallery.html">ギャラリーを見る　→</a></div>
+
+  <div style="margin-top:64px">
+    <div class="fade"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(11px,2vw,13px);letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Cat Gallery</div><div style="font-size:clamp(20px,4vw,26px);font-weight:500;letter-spacing:.2em;margin-bottom:24px">ここちゃんギャラリー</div></div>
+    <div class="fade" data-delay="0.08"><p style="font-size:14px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">我が家の愛猫、ここちゃんです。<br>かわいい姿をぜひご覧ください。</p></div>
+    <div class="fade" data-delay="0.12"><div class="gallery-grid"><div class="gallery-thumb" id="phC01"></div><div class="gallery-thumb" id="phC02"></div><div class="gallery-thumb" id="phC03"></div><div class="gallery-thumb" id="phC04"></div></div></div>
+    <div class="fade" data-delay="0.16"><a class="gallery-link" href="./gallery-coco.html" style="background:#8b7355">ここちゃんギャラリーを見る　→</a></div>
+  </div>
+</section>
+
+<!-- 8. CLOSING -->
+<section class="closing" id="message">
+  <div class="fade"><div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div><div style="height:32px"></div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:8px">Thank You</div><div style="font-size:22px;font-weight:500;letter-spacing:.2em;margin-bottom:36px">おわりに</div></div>
+  <div class="fade" data-delay="0.12"><div class="closing-text">ここまでお読みいただきありがとうございます
+
+当日 皆様にお会いできることを
+心より楽しみにしております
+
+二人の新しい旅路を
+どうぞ温かくお見守りください</div></div>
+  <div class="fade" data-delay="0.2"><div style="height:36px"></div><div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold);letter-spacing:.2em">Kosuke &amp; Nasumi</div></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-names">Hamano Kosuke　&amp;　Kurata Nasumi</div>
+  <div style="font-size:11px;letter-spacing:.2em">2026年5月30日（土）</div>
+</footer>
+
+<script>
+/* ── 画像を反映（編集不要）── */
+window.addEventListener('DOMContentLoaded', function() {
+  // Hero
+  if (IMAGES.hero) { var h = document.getElementById('imgHero'); h.src = IMAGES.hero; h.style.display = 'block'; }
+  // Profile
+  if (IMAGES.groom) { var g = document.getElementById('imgGroom'); g.src = IMAGES.groom; g.style.display = 'block'; document.getElementById('phGroom').style.display = 'none'; }
+  if (IMAGES.bride) { var b = document.getElementById('imgBride'); b.src = IMAGES.bride; b.style.display = 'block'; document.getElementById('phBride').style.display = 'none'; }
+  // Shrine
+  if (IMAGES.shrineMain) { var s = document.getElementById('imgShrine'); s.src = IMAGES.shrineMain; s.style.display = 'block'; document.getElementById('phShrine').style.display = 'none'; }
+  if (IMAGES.shrine01) { var s1 = document.getElementById('imgS01'); s1.src = IMAGES.shrine01; s1.style.display = 'block'; }
+  if (IMAGES.shrine02) { var s2 = document.getElementById('imgS02'); s2.src = IMAGES.shrine02; s2.style.display = 'block'; }
+  if (IMAGES.shrine03) { var s3 = document.getElementById('imgS03'); s3.src = IMAGES.shrine03; s3.style.display = 'block'; }
+  // Hometown Okayama
+  if (IMAGES.okayamaHeader) setImg('phOkayamaH', IMAGES.okayamaHeader);
+  if (IMAGES.okayama01) setImg('phOk01', IMAGES.okayama01);
+  if (IMAGES.okayama02) setImg('phOk02', IMAGES.okayama02);
+  if (IMAGES.okayama03) setImg('phOk03', IMAGES.okayama03);
+  // Hometown Shizuoka
+  if (IMAGES.shizuokaHeader) setImg('phShizuokaH', IMAGES.shizuokaHeader);
+  if (IMAGES.shizuoka01) setImg('phSz01', IMAGES.shizuoka01);
+  if (IMAGES.shizuoka02) setImg('phSz02', IMAGES.shizuoka02);
+  if (IMAGES.shizuoka03) setImg('phSz03', IMAGES.shizuoka03);
+  // Gallery thumbs
+  if (IMAGES.gallery01) setImg('phG01', IMAGES.gallery01);
+  if (IMAGES.gallery02) setImg('phG02', IMAGES.gallery02);
+  if (IMAGES.gallery03) setImg('phG03', IMAGES.gallery03);
+  if (IMAGES.gallery04) setImg('phG04', IMAGES.gallery04);
+  if (IMAGES.coco01) setImg('phC01', IMAGES.coco01);
+  if (IMAGES.coco02) setImg('phC02', IMAGES.coco02);
+  if (IMAGES.coco03) setImg('phC03', IMAGES.coco03);
+  if (IMAGES.coco04) setImg('phC04', IMAGES.coco04);
+});
+
+/* ── Q&A ── */
+var qaData = [
+  { q: "お互いの第一印象は？", groom: "元気いっぱいでよく喋る人。", bride: "声が大きくてよく喋る人。" },
+  { q: "お互いの尊敬できるところは？", groom: "周りの人に対して思いやりを持って接することができている。たまにおせっかい（笑）", bride: "心がとっても温かい。柔軟性がある。お酒以外（笑）" },
+  { q: "ケンカしたときどうする？", groom: "自分が悪くなくてもとりあえず謝る", bride: "謝ってもらった後に自分も謝り反省する" },
+  { q: "結婚してよかったなと思う瞬間は？", groom: "お酒の飲みすぎを教えてくれる時。早起きができるようになったこと。", bride: "いろんなことを共有できること。自分以外に頑張る理由ができたこと。" },
+  { q: "相手の『謎のこだわり』は？", groom: "ラーメン屋さんで自分で頼まず僕の分を一口ちょうだいとしてくること。そして一口の量がとても多いこと。", bride: "旅行に行った時の食べ物への執着。お酒への執着。髪型（笑）" },
+];
+var qaContainer = document.getElementById('qaCards');
+qaData.forEach(function(item, i) {
+  var num = String(i + 1).padStart(2, '0');
+  var card = document.createElement('div');
+  card.className = 'flip-card fade';
+  card.setAttribute('data-delay', String(0.12 + i * 0.06));
+  card.innerHTML = '<div class="flip-inner"><div class="flip-front"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Question ' + num + '</div><div style="font-size:18px;font-weight:600;letter-spacing:.1em;line-height:1.6">' + item.q + '</div><div style="margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.15em">▶ タップして回答を見る</div></div><div class="flip-back"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;text-align:center">Answer ' + num + '</div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:var(--gold-pale);color:var(--gold)">康</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--gold);margin-bottom:4px">康佑</div><div style="font-size:13px;line-height:1.9;color:var(--ink-soft)">' + item.groom + '</div></div></div><div class="qa-divider"></div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:rgba(122,155,181,.12);color:#7a9bb5">奈</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#7a9bb5;margin-bottom:4px">奈純</div><div style="font-size:13px;line-height:1.9;color:var(--ink-soft)">' + item.bride + '</div></div></div><div style="font-size:10px;color:var(--gold);text-align:center;letter-spacing:.12em;margin-top:4px">▶ タップして質問に戻る</div></div></div>';
+  card.addEventListener('click', function() { card.classList.toggle('flipped'); });
+  qaContainer.appendChild(card);
+});
+
+/* ── Side Nav ── */
+var sections = ['top','greeting','schedule','profile','hometown','shrine','qa','gallery','message'];
+var labels = ['TOP','\u3054\u3042\u3044\u3055\u3064','\u3054\u6848\u5185','\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb','\u3075\u308b\u3055\u3068','\u516b\u5742\u795e\u793e','Q&A','\u30ae\u30e3\u30e9\u30ea\u30fc','\u30e1\u30c3\u30bb\u30fc\u30b8'];
+var nav = document.getElementById('sideNav');
+sections.forEach(function(id, i) {
+  var a = document.createElement('a');
+  a.href = '#' + id;
+  a.innerHTML = '<span class="nav-label">' + labels[i] + '</span><span class="nav-dot"></span>';
+  nav.appendChild(a);
+});
+
+/* ── Scroll effects ── */
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade').forEach(function(el) {
+  var d = el.getAttribute('data-delay');
+  if (d) el.style.transitionDelay = d + 's';
+  observer.observe(el);
+});
+window.addEventListener('scroll', function() {
+  var pos = window.scrollY + window.innerHeight * 0.4;
+  var navLinks = nav.querySelectorAll('a');
+  sections.forEach(function(id, i) {
+    var el = document.getElementById(id);
+    if (el && el.offsetTop <= pos) { navLinks.forEach(function(a) { a.classList.remove('active'); }); navLinks[i].classList.add('active'); }
+  });
+}, { passive: true });
+
+/* ── Accordion (shrine) ── */
+document.querySelectorAll('[data-accordion]:not([data-ht-accordion])').forEach(function(acc) {
+  acc.querySelector('.accordion-header').addEventListener('click', function() {
+    document.querySelectorAll('[data-accordion]:not([data-ht-accordion])').forEach(function(a) { if (a !== acc) a.classList.remove('open'); });
+    acc.classList.toggle('open');
+  });
+});
+/* ── Accordion (hometown) ── */
+document.querySelectorAll('#hometown > div').forEach(function(section) {
+  section.querySelectorAll('[data-ht-accordion]').forEach(function(acc) {
+    acc.querySelector('.accordion-header').addEventListener('click', function() {
+      section.querySelectorAll('[data-ht-accordion]').forEach(function(a) { if (a !== acc) a.classList.remove('open'); });
+      acc.classList.toggle('open');
+    });
+  });
+});
+</script>
+</body>
+</html>
