@@ -38,16 +38,16 @@ body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Not
 .venue-body{padding:28px}
 .venue-name{font-size:20px;font-weight:600;letter-spacing:.15em;margin-bottom:2px}
 .venue-en{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:16px}
-.venue-row{display:flex;gap:10px;margin-bottom:10px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+.venue-row{display:flex;gap:10px;margin-bottom:10px;font-size:14px;color:var(--ink-soft);line-height:1.7}
 .venue-lbl{flex-shrink:0;width:44px;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--gold);padding-top:1px}
 .btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 24px;background:var(--indigo);color:#fff;border:none;border-radius:4px;font-family:'Shippori Mincho',serif;font-size:12px;letter-spacing:.1em;cursor:pointer;transition:all .3s;text-decoration:none}.btn:hover{background:#3d4f68;transform:translateY(-1px)}
 .prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:680px;margin:0 auto}@media(max-width:600px){.prof-grid{grid-template-columns:1fr;max-width:340px}}
 .prof-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 20px rgba(44,36,24,.05);border:1px solid rgba(184,150,62,.1)}
 .prof-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .prof-body{padding:24px}.prof-name{font-size:22px;font-weight:600;letter-spacing:.15em;margin-bottom:16px}
-.prof-row{display:flex;gap:10px;margin-bottom:8px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+.prof-row{display:flex;gap:10px;margin-bottom:8px;font-size:14px;color:var(--ink-soft);line-height:1.7}
 .prof-lbl{flex-shrink:0;width:56px;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--gold);padding-top:1px}
-.prof-msg{margin-top:16px;padding-top:16px;border-top:1px solid rgba(184,150,62,.1);font-size:13px;line-height:2;color:var(--ink-soft)}
+.prof-msg{margin-top:16px;padding-top:16px;border-top:1px solid rgba(184,150,62,.1);font-size:15px;line-height:2;color:var(--ink-soft)}
 .accordion{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 20px rgba(44,36,24,.05);border:1px solid rgba(184,150,62,.1);transition:border .3s}
 .accordion.open{border-color:var(--gold)}
 .accordion-header{display:flex;align-items:center;gap:12px;padding:20px 24px;cursor:pointer;user-select:none}
@@ -58,11 +58,12 @@ body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Not
 .ht-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold);line-height:1}
 .ht-label{font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--ink)}
 .flip-card{perspective:1000px;cursor:pointer}
-.flip-inner{position:relative;width:100%;min-height:200px;transition:transform .7s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip-inner{position:relative;width:100%;transition:transform .7s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
 .flip-card.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-front,.flip-back{backface-visibility:hidden;border-radius:12px;overflow:hidden;position:absolute;top:0;left:0;width:100%;min-height:200px}
+.flip-front,.flip-back{backface-visibility:hidden;border-radius:12px;overflow:hidden;width:100%}
 .flip-front{background:#fff;border:1px solid rgba(184,150,62,.12);box-shadow:0 4px 20px rgba(44,36,24,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px 28px}
-.flip-back{background:var(--washi);border:1px solid rgba(184,150,62,.18);box-shadow:0 4px 20px rgba(44,36,24,.08);transform:rotateY(180deg);padding:28px 24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.flip-back{background:var(--washi);border:1px solid rgba(184,150,62,.18);box-shadow:0 4px 20px rgba(44,36,24,.08);transform:rotateY(180deg);position:absolute;top:0;left:0;padding:28px 24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.flip-card.flipped .flip-front{visibility:hidden}
 .qa-avatar{flex-shrink:0;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
 .qa-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
 .gallery-link{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--indigo);color:#fff;border-radius:6px;font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.15em;text-decoration:none;box-shadow:0 4px 20px rgba(45,58,78,.2);transition:all .3s}.gallery-link:hover{background:#3d4f68;transform:translateY(-2px)}
@@ -70,7 +71,7 @@ body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Not
 .gallery-thumb{aspect-ratio:1/1;border-radius:6px;overflow:hidden;background:#ddd}
 .gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .closing{padding:80px 24px;background:linear-gradient(175deg,#ebe3d3,#e6dcc8);text-align:center}
-.closing-text{font-size:15px;line-height:2.6;color:var(--ink-soft);white-space:pre-line;letter-spacing:.08em;max-width:480px;margin:0 auto}
+.closing-text{font-size:16px;line-height:2.6;color:var(--ink-soft);white-space:pre-line;letter-spacing:.08em;max-width:480px;margin:0 auto}
 .footer{padding:40px 24px;text-align:center;background:var(--indigo);color:rgba(255,255,255,.6)}
 .footer-names{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.3em;color:rgba(255,255,255,.85);margin-bottom:6px}
 .divider{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 0}
@@ -163,7 +164,7 @@ function setImg(id, src) {
 <section class="sec sec-a" id="greeting">
   <div class="fade"><div class="stitle-en">Greeting</div><div class="stitle-jp">ごあいさつ</div></div>
   <div class="fade" data-delay="0.12">
-    <p style="font-size:14px;line-height:2.4;color:var(--ink-soft);max-width:520px;margin:0 auto;white-space:pre-line;letter-spacing:.08em;text-align:center">謹啓　薫風の候
+    <p style="font-size:15px;line-height:2.4;color:var(--ink-soft);max-width:520px;margin:0 auto;white-space:pre-line;letter-spacing:.08em;text-align:center">謹啓　薫風の候
 皆様におかれましては
 ますますご清祥のこととお慶び申し上げます
 
@@ -201,11 +202,11 @@ function setImg(id, src) {
         <div class="venue-row"><div class="venue-lbl">交通</div><div>京阪電車「祇園四条駅」より徒歩5分<br>阪急電車「京都河原町駅」より徒歩8分<br>JR京都駅よりタクシー約15分</div></div>
         <div style="margin-top:12px;font-size:12px;color:var(--gold);letter-spacing:.06em">※ お車でお越しの場合は、近隣のコインパーキングをご利用ください。</div>
         <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(184,150,62,.12)">
-          <div style="font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--ink);margin-bottom:12px">ご来場にあたってのお願い</div>
+          <div style="font-size:14px;font-weight:500;letter-spacing:.12em;color:var(--ink);margin-bottom:12px">ご来場にあたってのお願い</div>
           <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px">
-            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>八坂神社にはロッカーがございますが、小さいものが中心のため、キャリーバッグなどの大きなお荷物はお預けいただくことができません。お手数をおかけいたしますが、大きなお荷物は事前に宿泊先などへお預けのうえお越しください。</li>
-            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>当日は更衣室のご用意がございませんため、お着替えをお済ませのうえお越しいただけますと幸いです。</li>
-            <li style="font-size:12px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>お車代は当日お渡しさせていただきます。</li>
+            <li style="font-size:13.5px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>八坂神社にはロッカーがございますが、小さいものが中心のため、キャリーバッグなどの大きなお荷物はお預けいただくことができません。お手数をおかけいたしますが、大きなお荷物は事前に宿泊先などへお預けのうえお越しください。</li>
+            <li style="font-size:13.5px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>当日は更衣室のご用意がございませんため、お着替えをお済ませのうえお越しいただけますと幸いです。</li>
+            <li style="font-size:13.5px;line-height:1.9;color:var(--ink-soft);padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">●</span>お車代は当日お渡しさせていただきます。</li>
           </ul>
         </div>
         <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">Google Maps で開く →</a>
@@ -253,11 +254,11 @@ function setImg(id, src) {
     <div class="fade" style="text-align:center;margin-bottom:28px"><div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">Kosuke's Hometown</div><div style="font-size:22px;font-weight:600;letter-spacing:.15em">晴れの国 岡山</div><div style="font-size:12px;color:var(--ink-soft);letter-spacing:.15em;margin-top:4px">康佑のふるさと</div></div>
     <div class="fade" data-delay="0.08"><div id="phOkayamaH" style="border-radius:10px;overflow:hidden;margin-bottom:24px;box-shadow:0 3px 16px rgba(44,36,24,.06)"><div class="ht-placeholder" style="background:linear-gradient(135deg,#8fa87a44,#8fa87a22);color:#8fa87a">岡山の風景写真を追加</div></div></div>
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk01"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">岡山県御津郡御津町という、山と川に囲まれた自然豊かな場所で育ちました。
+      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk01"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">岡山県御津郡御津町という、山と川に囲まれた自然豊かな場所で育ちました。
 のんびりとした空気が流れる、落ち着いた地元です。</p></div></div></div></div>
-      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk02"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">「じゃけん」などの方言に、岡山らしい空気が残っています。
+      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk02"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">「じゃけん」などの方言に、岡山らしい空気が残っています。
 桃太郎ゆかりの地として知られ、えびめしのような個性的なB級グルメも地元らしい魅力のひとつです。</p></div></div></div></div>
-      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk03"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">自然の近くで過ごしてきたこともあって、今でも落ち着いた時間や穏やかな空気に安心感を覚えます。
+      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phOk03"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">自然の近くで過ごしてきたこともあって、今でも落ち着いた時間や穏やかな空気に安心感を覚えます。
 地元で育った感覚が、今の自分の土台になっているように思います。</p></div></div></div></div>
     </div>
   </div>
@@ -266,9 +267,9 @@ function setImg(id, src) {
     <div class="fade" style="text-align:center;margin-bottom:28px"><div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">Nasumi's Hometown</div><div style="font-size:22px;font-weight:600;letter-spacing:.15em">富士のふもと 静岡</div><div style="font-size:12px;color:var(--ink-soft);letter-spacing:.15em;margin-top:4px">奈純のふるさと</div></div>
     <div class="fade" data-delay="0.08"><div id="phShizuokaH" style="border-radius:10px;overflow:hidden;margin-bottom:24px;box-shadow:0 3px 16px rgba(44,36,24,.06)"><div class="ht-placeholder" style="background:linear-gradient(135deg,#7a9bb544,#7a9bb522);color:#7a9bb5">静岡の風景写真を追加</div></div></div>
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz01"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
-      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz02"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
-      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz03"></div><p style="font-size:13px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+      <div class="fade" data-delay="0.12"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">01</span><span class="ht-label" style="flex:1">育った場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz01"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+      <div class="fade" data-delay="0.16"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">02</span><span class="ht-label" style="flex:1">地元らしさ</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz02"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
+      <div class="fade" data-delay="0.2"><div class="accordion" data-ht-accordion><div class="accordion-header"><span class="ht-num" style="flex-shrink:0">03</span><span class="ht-label" style="flex:1">地元のお気に入りポイント</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><div id="phSz03"></div><p style="font-size:14.5px;line-height:2.1;color:var(--ink-soft);margin:0">（奈純さんの内容をここに記入）</p></div></div></div></div>
     </div>
   </div>
 </section>
@@ -277,15 +278,15 @@ function setImg(id, src) {
 <section class="sec sec-a" id="shrine">
   <div class="fade"><div class="stitle-en">Yasaka Shrine</div><div class="stitle-jp">八坂神社ってどんな場所？</div></div>
   <div class="fade" data-delay="0.08"><div style="max-width:640px;margin:0 auto 32px;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,24,.08)"><img id="imgShrine" src="" alt="八坂神社" style="width:100%;display:none"><div id="phShrine" style="width:100%;aspect-ratio:1/1;background:#c4533a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">八坂神社の写真</div></div></div>
-  <div class="fade" data-delay="0.14"><p style="font-size:14px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;max-width:600px;margin:0 auto 40px;text-align:center">八坂神社は、京都の有名な神社というだけではなく、強い神様の物語や龍の伝説が今も語り継がれている、少し特別な場所です。
+  <div class="fade" data-delay="0.14"><p style="font-size:15px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;max-width:600px;margin:0 auto 40px;text-align:center">八坂神社は、京都の有名な神社というだけではなく、強い神様の物語や龍の伝説が今も語り継がれている、少し特別な場所です。
 今回私たちが挙式を行うのは、そんな祈りと物語が今も息づく神社。
 少しだけ背景を知っていただくと、当日の景色もいつもより印象深く感じてもらえるかもしれません。</p></div>
   <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:16px">
-    <div class="fade" data-delay="0.18"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">01</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">強くて守ってくれる神様がいる場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS01" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の主祭神は、素戔嗚尊（すさのをのみこと）。日本神話では、あらゆる災厄の象徴ともいえる八岐大蛇（やまたのおろち）を退治したことで知られる、力強い神様です。
+    <div class="fade" data-delay="0.18"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">01</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">強くて守ってくれる神様がいる場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS01" src="" alt="" style="display:none"><p style="font-size:14.5px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の主祭神は、素戔嗚尊（すさのをのみこと）。日本神話では、あらゆる災厄の象徴ともいえる八岐大蛇（やまたのおろち）を退治したことで知られる、力強い神様です。
 八坂神社でも、災いを祓い、人々を守る神様として大切に祀られています。ただ歴史のある神社というだけでなく、『困難に立ち向かい、災いを退ける強い神様がいる場所』だと思うと、少し見え方が変わるかもしれません。</p></div></div></div></div>
-    <div class="fade" data-delay="0.24"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">02</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">京都のまんなかにある神話スポット</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS02" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の本殿の下には、青龍が棲む龍穴があると言われています。公式にも、本殿の下に大きな池があり、そこは青龍の住む龍穴であるという話が紹介されています。
+    <div class="fade" data-delay="0.24"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">02</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">京都のまんなかにある神話スポット</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS02" src="" alt="" style="display:none"><p style="font-size:14.5px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社の本殿の下には、青龍が棲む龍穴があると言われています。公式にも、本殿の下に大きな池があり、そこは青龍の住む龍穴であるという話が紹介されています。
 京都の中心部、たくさんの人が行き交う場所にありながら、そんな神話のような伝説が今も残っているのが八坂神社の面白さです。観光地として有名でありながら、どこか神秘的な空気を感じるのは、こうした背景があるからかもしれません。</p></div></div></div></div>
-    <div class="fade" data-delay="0.3"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">03</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">祈りと物語が、今も続いている場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS03" src="" alt="" style="display:none"><p style="font-size:13px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社は、昔の物語が残っているだけの場所ではありません。古くから人々が災いを鎮め、無事を祈る場所として大切にしてきた神社であり、その流れは今も続いています。
+    <div class="fade" data-delay="0.3"><div class="accordion" data-accordion><div class="accordion-header"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0">03</span><span style="font-size:16px;font-weight:600;letter-spacing:.08em;flex:1">祈りと物語が、今も続いている場所</span><span class="accordion-arrow">▾</span></div><div class="accordion-body"><div class="accordion-inner"><img id="imgS03" src="" alt="" style="display:none"><p style="font-size:14.5px;line-height:2.2;color:var(--ink-soft);white-space:pre-line;letter-spacing:.04em;margin:0">八坂神社は、昔の物語が残っているだけの場所ではありません。古くから人々が災いを鎮め、無事を祈る場所として大切にしてきた神社であり、その流れは今も続いています。
 祇園祭も、もともとは疫病などの災厄を鎮める祈りと深く結びついた行事として受け継がれてきました。つまり八坂神社は、『昔の伝説が残る場所』であると同時に、『今も人の願いが集まる場所』でもあります。</p></div></div></div></div>
   </div>
 </section>
@@ -293,20 +294,20 @@ function setImg(id, src) {
 <!-- Q&A -->
 <section class="sec" id="qa">
   <div class="fade"><div class="stitle-en">Q &amp; A</div><div class="stitle-jp">二人に聞いてみた</div></div>
-  <div class="fade" data-delay="0.08"><p style="font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:32px;letter-spacing:.06em">カードをタップすると、二人の回答が見られます</p></div>
+  <div class="fade" data-delay="0.08"><p style="font-size:14.5px;color:var(--ink-soft);text-align:center;margin-bottom:32px;letter-spacing:.06em">カードをタップすると、二人の回答が見られます</p></div>
   <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:20px" id="qaCards"></div>
 </section>
 
 <!-- 7. GALLERY -->
 <section class="sec sec-a" id="gallery" style="text-align:center">
   <div class="fade"><div class="stitle-en">Photo Gallery</div><div class="stitle-jp">二人の写真ギャラリー</div></div>
-  <div class="fade" data-delay="0.1"><p style="font-size:14px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">二人の思い出の写真をまとめました。<br>ぜひご覧ください。</p></div>
+  <div class="fade" data-delay="0.1"><p style="font-size:15px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">二人の思い出の写真をまとめました。<br>ぜひご覧ください。</p></div>
   <div class="fade" data-delay="0.14"><div class="gallery-grid"><div class="gallery-thumb" id="phG01"></div><div class="gallery-thumb" id="phG02"></div><div class="gallery-thumb" id="phG03"></div><div class="gallery-thumb" id="phG04"></div></div></div>
   <div class="fade" data-delay="0.2"><a class="gallery-link" href="./gallery.html">ギャラリーを見る　→</a></div>
 
   <div style="margin-top:64px">
     <div class="fade"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(11px,2vw,13px);letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Cat Gallery</div><div style="font-size:clamp(20px,4vw,26px);font-weight:500;letter-spacing:.2em;margin-bottom:24px">ここちゃんギャラリー</div></div>
-    <div class="fade" data-delay="0.08"><p style="font-size:14px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">我が家の愛猫、ここちゃんです。<br>かわいい姿をぜひご覧ください。</p></div>
+    <div class="fade" data-delay="0.08"><p style="font-size:15px;line-height:2;color:var(--ink-soft);max-width:420px;margin:0 auto 24px;letter-spacing:.06em">我が家の愛猫、ここちゃんです。<br>かわいい姿をぜひご覧ください。</p></div>
     <div class="fade" data-delay="0.12"><div class="gallery-grid"><div class="gallery-thumb" id="phC01"></div><div class="gallery-thumb" id="phC02"></div><div class="gallery-thumb" id="phC03"></div><div class="gallery-thumb" id="phC04"></div></div></div>
     <div class="fade" data-delay="0.16"><a class="gallery-link" href="./gallery-coco.html" style="background:#8b7355">ここちゃんギャラリーを見る　→</a></div>
   </div>
@@ -378,7 +379,7 @@ qaData.forEach(function(item, i) {
   var card = document.createElement('div');
   card.className = 'flip-card fade';
   card.setAttribute('data-delay', String(0.12 + i * 0.06));
-  card.innerHTML = '<div class="flip-inner"><div class="flip-front"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Question ' + num + '</div><div style="font-size:18px;font-weight:600;letter-spacing:.1em;line-height:1.6">' + item.q + '</div><div style="margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.15em">▶ タップして回答を見る</div></div><div class="flip-back"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;text-align:center">Answer ' + num + '</div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:var(--gold-pale);color:var(--gold)">康</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--gold);margin-bottom:4px">康佑</div><div style="font-size:13px;line-height:1.9;color:var(--ink-soft)">' + item.groom + '</div></div></div><div class="qa-divider"></div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:rgba(122,155,181,.12);color:#7a9bb5">奈</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#7a9bb5;margin-bottom:4px">奈純</div><div style="font-size:13px;line-height:1.9;color:var(--ink-soft)">' + item.bride + '</div></div></div><div style="font-size:10px;color:var(--gold);text-align:center;letter-spacing:.12em;margin-top:4px">▶ タップして質問に戻る</div></div></div>';
+  card.innerHTML = '<div class="flip-inner"><div class="flip-front"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Question ' + num + '</div><div style="font-size:18px;font-weight:600;letter-spacing:.1em;line-height:1.6">' + item.q + '</div><div style="margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.15em">▶ タップして回答を見る</div></div><div class="flip-back"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;text-align:center">Answer ' + num + '</div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:var(--gold-pale);color:var(--gold)">康</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--gold);margin-bottom:4px">康佑</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.groom + '</div></div></div><div class="qa-divider"></div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:rgba(122,155,181,.12);color:#7a9bb5">奈</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#7a9bb5;margin-bottom:4px">奈純</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.bride + '</div></div></div><div style="font-size:10px;color:var(--gold);text-align:center;letter-spacing:.12em;margin-top:4px">▶ タップして質問に戻る</div></div></div>';
   card.addEventListener('click', function() { card.classList.toggle('flipped'); });
   qaContainer.appendChild(card);
 });
@@ -411,6 +412,24 @@ window.addEventListener('scroll', function() {
     if (el && el.offsetTop <= pos) { navLinks.forEach(function(a) { a.classList.remove('active'); }); navLinks[i].classList.add('active'); }
   });
 }, { passive: true });
+
+/* ── Flip card height adjustment ── */
+document.querySelectorAll('.flip-card').forEach(function(card) {
+  var front = card.querySelector('.flip-front');
+  var back = card.querySelector('.flip-back');
+  var inner = card.querySelector('.flip-inner');
+  // Make back temporarily visible to measure
+  back.style.position = 'relative';
+  back.style.visibility = 'hidden';
+  var backH = back.offsetHeight;
+  var frontH = front.offsetHeight;
+  back.style.position = 'absolute';
+  back.style.visibility = '';
+  var maxH = Math.max(frontH, backH);
+  inner.style.minHeight = maxH + 'px';
+  front.style.minHeight = maxH + 'px';
+  back.style.minHeight = maxH + 'px';
+});
 
 /* ── Accordion (shrine) ── */
 document.querySelectorAll('[data-accordion]:not([data-ht-accordion])').forEach(function(acc) {
