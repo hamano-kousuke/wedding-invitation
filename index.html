@@ -378,20 +378,20 @@ window.addEventListener('DOMContentLoaded', function() {
 
 /* ── Q&A ── */
 var qaData = [
-  { q: "お互いの第一印象は？", groom: "元気いっぱいでよく喋る人。", bride: "声が大きくてよく喋る人。", image: "images/qa-01.png" },
-  { q: "お互いの尊敬できるところは？", groom: "周りの人に対して思いやりと愛情を持って接していること。たまにおせっかい（笑）", bride: "心がとっても温かい。柔軟性がある。お酒以外（笑）", image: "images/qa-02.png" },
-  { q: "ケンカしたときどうする？", groom: "自分が悪くなくてもとりあえず謝る", bride: "謝ってもらった後に自分も謝り反省する", image: "images/qa-03.png" },
-  { q: "結婚してよかったなと思う瞬間は？", groom: "お酒の飲みすぎを教えてくれる時。早起きができるようになったこと。", bride: "いろんなことを共有できること。自分以外に頑張る理由ができたこと。", image: "images/qa-04.png" },
-  { q: "相手の『謎のこだわり』は？", groom: "ラーメン屋さんで自分で頼まず僕の分を一口ちょうだいとしてくること。そして一口の量がとても多いこと。", bride: "旅行に行った時の食べ物への執着。お酒への執着。髪型（笑）", image: "images/qa-05.png" },
+  { q: "お互いの第一印象は？", groom: "元気いっぱいでよく喋る人。", bride: "声が大きくてよく喋る人。", image: "images/qa-01.jpg" },
+  { q: "お互いの尊敬できるところは？", groom: "周りの人に対して思いやりと愛情を持って接していること。たまにおせっかい（笑）", bride: "心がとっても温かい。柔軟性がある。お酒以外（笑）", image: "images/qa-02.jpg" },
+  { q: "ケンカしたときどうする？", groom: "自分が悪くなくてもとりあえず謝る", bride: "謝ってもらった後に自分も謝り反省する", image: "images/qa-03.jpg" },
+  { q: "結婚してよかったなと思う瞬間は？", groom: "お酒の飲みすぎを教えてくれる時。早起きができるようになったこと。", bride: "いろんなことを共有できること。自分以外に頑張る理由ができたこと。", image: "images/qa-04.jpg" },
+  { q: "相手の『謎のこだわり』は？", groom: "ラーメン屋さんで自分の分を頼まず僕の分を一口ちょうだいとしてくること。そして一口の量がとても多いこと。", bride: "旅行に行った時の食べ物への執着。お酒への執着。髪型（笑）", image: "images/qa-05.jpg" },
 ];
 var qaContainer = document.getElementById('qaCards');
 qaData.forEach(function(item, i) {
   var num = String(i + 1).padStart(2, '0');
-  var imgHtml = item.image ? '<img src="' + item.image + '" alt="" style="width:100%;border-radius:8px;margin-bottom:12px;display:block">' : '';
+  var imgHtml = item.image ? '<img src="' + item.image + '" alt="" style="width:100%;border-radius:8px;margin-top:12px;display:block">' : '';
   var card = document.createElement('div');
   card.className = 'flip-card fade';
   card.setAttribute('data-delay', String(0.12 + i * 0.06));
-  card.innerHTML = '<div class="flip-inner"><div class="flip-front"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Question ' + num + '</div><div style="font-size:18px;font-weight:600;letter-spacing:.1em;line-height:1.6">' + item.q + '</div><div style="margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.15em">▶ タップして回答を見る</div></div><div class="flip-back"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;text-align:center">Answer ' + num + '</div>' + imgHtml + '<div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:var(--gold-pale);color:var(--gold)">康</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--gold);margin-bottom:4px">康佑</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.groom + '</div></div></div><div class="qa-divider"></div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:rgba(122,155,181,.12);color:#7a9bb5">奈</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#7a9bb5;margin-bottom:4px">奈純</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.bride + '</div></div></div><div style="font-size:10px;color:var(--gold);text-align:center;letter-spacing:.12em;margin-top:4px">▶ タップして質問に戻る</div></div></div>';
+  card.innerHTML = '<div class="flip-inner"><div class="flip-front"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Question ' + num + '</div><div style="font-size:18px;font-weight:600;letter-spacing:.1em;line-height:1.6">' + item.q + '</div><div style="margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.15em">▶ タップして回答を見る</div></div><div class="flip-back"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;text-align:center">Answer ' + num + '</div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:var(--gold-pale);color:var(--gold)">康</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--gold);margin-bottom:4px">康佑</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.groom + '</div></div></div><div class="qa-divider"></div><div style="display:flex;gap:12px;align-items:flex-start"><div class="qa-avatar" style="background:rgba(122,155,181,.12);color:#7a9bb5">奈</div><div><div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#7a9bb5;margin-bottom:4px">奈純</div><div style="font-size:14.5px;line-height:1.9;color:var(--ink-soft)">' + item.bride + '</div></div></div>' + imgHtml + '<div style="font-size:10px;color:var(--gold);text-align:center;letter-spacing:.12em;margin-top:12px">▶ タップして質問に戻る</div></div></div>';
   qaContainer.appendChild(card);
 });
 
@@ -425,19 +425,30 @@ window.addEventListener('scroll', function() {
 }, { passive: true });
 
 /* ── Flip card height adjustment ── */
-function adjustFlipCards() {
+function getOriginalHeights() {
   document.querySelectorAll('.flip-card').forEach(function(card) {
     var front = card.querySelector('.flip-front');
-    var back = card.querySelector('.flip-back');
+    card.setAttribute('data-front-h', front.offsetHeight);
     var inner = card.querySelector('.flip-inner');
     inner.style.minHeight = front.offsetHeight + 'px';
     front.style.minHeight = front.offsetHeight + 'px';
-    back.style.minHeight = front.offsetHeight + 'px';
+    card.querySelector('.flip-back').style.minHeight = front.offsetHeight + 'px';
   });
 }
-adjustFlipCards();
-window.addEventListener('load', adjustFlipCards);
-window.addEventListener('resize', adjustFlipCards);
+getOriginalHeights();
+window.addEventListener('load', getOriginalHeights);
+window.addEventListener('resize', function() {
+  document.querySelectorAll('.flip-card').forEach(function(card) {
+    card.classList.remove('flipped');
+    var inner = card.querySelector('.flip-inner');
+    var front = card.querySelector('.flip-front');
+    var back = card.querySelector('.flip-back');
+    inner.style.minHeight = '';
+    front.style.minHeight = '';
+    back.style.minHeight = '';
+  });
+  setTimeout(getOriginalHeights, 100);
+});
 
 document.querySelectorAll('.flip-card').forEach(function(card) {
   var front = card.querySelector('.flip-front');
@@ -447,13 +458,20 @@ document.querySelectorAll('.flip-card').forEach(function(card) {
     card.classList.toggle('flipped');
     if (card.classList.contains('flipped')) {
       back.style.position = 'relative';
+      back.style.visibility = 'hidden';
       var backH = back.offsetHeight;
       back.style.position = 'absolute';
+      back.style.visibility = '';
+      inner.style.transition = 'min-height .5s ease';
       inner.style.minHeight = backH + 'px';
       front.style.minHeight = backH + 'px';
       back.style.minHeight = backH + 'px';
     } else {
-      adjustFlipCards();
+      var frontH = parseInt(card.getAttribute('data-front-h')) || front.offsetHeight;
+      inner.style.transition = 'min-height .5s ease';
+      inner.style.minHeight = frontH + 'px';
+      front.style.minHeight = frontH + 'px';
+      back.style.minHeight = frontH + 'px';
     }
   });
 });
