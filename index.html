@@ -454,7 +454,8 @@ document.querySelectorAll('.flip-card').forEach(function(card) {
   var back = card.querySelector('.flip-back');
   var inner = card.querySelector('.flip-inner');
   card.addEventListener('click', function() {
-    card.classList.toggle('flipped');
+    if (card.classList.contains('flipped')) return;
+    card.classList.add('flipped');
     if (card.classList.contains('flipped')) {
       back.style.position = 'relative';
       back.style.visibility = 'hidden';
