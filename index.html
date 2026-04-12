@@ -81,9 +81,17 @@ body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Not
 .side-nav a.active .nav-label{opacity:1}
 .side-nav .nav-dot{width:5px;height:5px;border-radius:50%;border:1.5px solid #ccc;transition:all .3s}
 .side-nav a.active .nav-dot{width:9px;height:9px;border-color:var(--gold);background:var(--gold)}
+.img-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;cursor:pointer;padding:20px}
+.img-modal.open{display:flex}
+.img-modal img{max-width:100%;max-height:100%;object-fit:contain}
+.img-modal-close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none}
+.clickable-img{cursor:pointer;transition:opacity .3s}
+.clickable-img:hover{opacity:.9}
 </style>
 </head>
 <body>
+
+<div class="img-modal" id="imgModal"><button class="img-modal-close">×</button><img id="imgModalTarget" src="" alt=""></div>
 
 <script>
 const IMAGES = {
@@ -309,11 +317,11 @@ window.addEventListener('DOMContentLoaded', function() {
   if (IMAGES.shrine01) { var s1 = document.getElementById('imgS01'); s1.src = IMAGES.shrine01; s1.style.display = 'block'; }
   if (IMAGES.shrine02) { var s2 = document.getElementById('imgS02'); s2.src = IMAGES.shrine02; s2.style.display = 'block'; }
   if (IMAGES.shrine03) { var s3 = document.getElementById('imgS03'); s3.src = IMAGES.shrine03; s3.style.display = 'block'; }
-  if (IMAGES.okayamaHeader) setImg('phOkayamaH', IMAGES.okayamaHeader);
+  if (IMAGES.okayamaHeader) { setImg('phOkayamaH', IMAGES.okayamaHeader); var eo = document.getElementById('phOkayamaH'); eo.classList.add('clickable-img'); eo.onclick = function(){ document.getElementById('imgModalTarget').src = IMAGES.okayamaHeader; document.getElementById('imgModal').classList.add('open'); }; }
   if (IMAGES.okayama01) setImg('phOk01', IMAGES.okayama01);
   if (IMAGES.okayama02) setImg('phOk02', IMAGES.okayama02);
   if (IMAGES.okayama03) setImg('phOk03', IMAGES.okayama03);
-  if (IMAGES.shizuokaHeader) setImg('phShizuokaH', IMAGES.shizuokaHeader);
+  if (IMAGES.shizuokaHeader) { setImg('phShizuokaH', IMAGES.shizuokaHeader); var es = document.getElementById('phShizuokaH'); es.classList.add('clickable-img'); es.onclick = function(){ document.getElementById('imgModalTarget').src = IMAGES.shizuokaHeader; document.getElementById('imgModal').classList.add('open'); }; }
   if (IMAGES.shizuoka01) setImg('phSz01', IMAGES.shizuoka01);
   if (IMAGES.shizuoka02) setImg('phSz02', IMAGES.shizuoka02);
   if (IMAGES.shizuoka03) setImg('phSz03', IMAGES.shizuoka03);
@@ -325,6 +333,7 @@ window.addEventListener('DOMContentLoaded', function() {
   if (IMAGES.coco02) setImg('phC02', IMAGES.coco02);
   if (IMAGES.coco03) setImg('phC03', IMAGES.coco03);
   if (IMAGES.coco04) setImg('phC04', IMAGES.coco04);
+  document.getElementById('imgModal').addEventListener('click', function(){ this.classList.remove('open'); });
 });
 
 var qaData = [
