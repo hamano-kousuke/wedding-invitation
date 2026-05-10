@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宴会会場のご案内 | 康佑 & 奈純</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2c2418;--ink-soft:#5a4e3c;--cream:#faf6f0;--gold:#b8963e;--gold-light:#d4b96a;--gold-pale:rgba(184,150,62,.10);--indigo:#2d3a4e;--washi:#f5efe5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Shippori Mincho','Noto Serif JP',serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.fade{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.23,1,.32,1),transform .85s cubic-bezier(.23,1,.32,1)}.fade.visible{opacity:1;transform:translateY(0)}
+.sec{padding:80px 20px;position:relative}.sec-a{background:var(--washi)}@media(max-width:640px){.sec{padding:60px 16px}}
+.stitle-en{font-family:'Cormorant Garamond',serif;font-size:clamp(11px,2vw,13px);font-weight:400;letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;text-align:center}
+.stitle-jp{font-size:clamp(20px,4vw,26px);font-weight:500;letter-spacing:.2em;color:var(--ink);text-align:center;margin-bottom:40px}
+.back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;color:var(--gold);font-size:13px;letter-spacing:.1em;text-decoration:none;border:1px solid var(--gold);border-radius:4px;transition:all .3s}
+.back-link:hover{background:var(--gold);color:#fff}
+.venue-link{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;background:var(--indigo);color:#fff;border-radius:6px;font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.15em;text-decoration:none;box-shadow:0 4px 20px rgba(45,58,78,.2);transition:all .3s}
+.venue-link:hover{background:#3d4f68;transform:translateY(-2px)}
+.img-modal{position:fixed;inset:0;background:rgba(255,255,255,.95);display:none;align-items:center;justify-content:center;z-index:9999;cursor:pointer;padding:20px}
+.img-modal.open{display:flex}
+.img-modal img{max-width:100%;max-height:100%;object-fit:contain}
+.img-modal-close{position:absolute;top:20px;right:24px;color:#2c2418;font-size:32px;cursor:pointer;background:none;border:none}
+.divider{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 0}
+.divider-line{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
+.divider-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.header-bar{padding:16px 20px;text-align:center}
+.footer{padding:40px 24px;text-align:center;background:var(--indigo);color:rgba(255,255,255,.6)}
+.footer-names{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.3em;color:rgba(255,255,255,.85);margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="img-modal" id="imgModal"><button class="img-modal-close">&times;</button><img id="imgModalTarget" src="" alt=""></div>
+
+<!-- Header -->
+<div class="header-bar fade">
+  <a href="index.html" class="back-link">← 招待状サイトに戻る</a>
+</div>
+
+<!-- 1. 会場紹介 -->
+<section class="sec" style="text-align:center">
+  <div class="fade">
+    <div class="stitle-en">Reception Venue</div>
+    <div class="stitle-jp">宴会会場のご案内</div>
+  </div>
+  <div class="fade" data-delay="0.08">
+    <div style="max-width:560px;margin:0 auto 32px">
+      <p style="font-size:24px;font-weight:600;letter-spacing:.15em;color:var(--ink);margin-bottom:8px">中村楼</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.3em;color:var(--gold);margin-bottom:24px">Nakamuraro</p>
+      <p style="font-size:15px;line-height:2.2;color:var(--ink-soft);letter-spacing:.06em">八坂神社の境内に佇む、創業450年以上の歴史を持つ老舗料亭です。<br>祇園の中心という特別な立地で、京料理をお楽しみいただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 会場の場所（境内マップ） -->
+<section class="sec sec-a" style="text-align:center">
+  <div class="fade">
+    <div class="stitle-en">Venue Location</div>
+    <div class="stitle-jp">会場の場所</div>
+  </div>
+  <div class="fade" data-delay="0.08">
+    <p style="font-size:15px;line-height:2;color:var(--ink-soft);max-width:480px;margin:0 auto 24px;letter-spacing:.06em">披露宴会場の中村楼は、八坂神社の境内にございます。<br>下記の境内マップをご参照ください。</p>
+  </div>
+  <div class="fade" data-delay="0.14">
+    <div id="venueMap" style="max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,24,.08);cursor:pointer" onclick="document.getElementById('imgModalTarget').src='images/venue-map.png';document.getElementById('imgModal').classList.add('open');">
+      <img src="images/venue-map.png" alt="八坂神社境内マップ - 中村楼の場所" style="width:100%;display:block">
+    </div>
+    <p style="font-size:12px;color:var(--gold);margin-top:12px;letter-spacing:.08em">※ 画像をタップすると拡大できます</p>
+  </div>
+</section>
+
+<!-- 3. 席次表 -->
+<section class="sec" style="text-align:center">
+  <div class="fade">
+    <div class="stitle-en">Seating Chart</div>
+    <div class="stitle-jp">席次表</div>
+  </div>
+  <div class="fade" data-delay="0.08">
+    <p style="font-size:15px;line-height:2;color:var(--ink-soft);max-width:480px;margin:0 auto 24px;letter-spacing:.06em">当日のお席のご案内です。</p>
+  </div>
+  <div class="fade" data-delay="0.14">
+    <div id="seatingChart" style="max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,24,.08);cursor:pointer" onclick="document.getElementById('imgModalTarget').src='images/seating-chart.png';document.getElementById('imgModal').classList.add('open');">
+      <!-- ↓ images/seating-chart.png に席次表画像を配置 -->
+      <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#d4cfc5,#c4bfb3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;letter-spacing:.1em">席次表の画像を追加</div>
+    </div>
+    <p style="font-size:12px;color:var(--gold);margin-top:12px;letter-spacing:.08em">※ 画像をタップすると拡大できます</p>
+  </div>
+</section>
+
+<!-- 戻るリンク -->
+<section class="sec sec-a" style="text-align:center">
+  <div class="fade">
+    <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div style="margin-top:32px">
+      <a href="index.html" class="venue-link">招待状サイトに戻る　→</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-names">Kosuke &amp; Coco &amp; Nasumi</div>
+  <div style="font-size:11px;letter-spacing:.2em">2026年5月30日(土)</div>
+</footer>
+
+<script>
+document.getElementById('imgModal').addEventListener('click',function(){this.classList.remove('open');});
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.fade').forEach(function(el){var d=el.getAttribute('data-delay');if(d)el.style.transitionDelay=d+'s';observer.observe(el);});
+</script>
+</body>
+</html>
